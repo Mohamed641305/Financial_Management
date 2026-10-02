@@ -909,3 +909,290 @@ body > *:not(.app-bg):not(.modal-overlay) { position: relative; z-index: 1; }
   color: var(--text-3);
   white-space: nowrap;
 }
+
+/* ═══════════════════════════════════════════════
+   RESPONSIVE — FULL BREAKPOINT SUITE
+   (appended; do not edit rules above this line)
+═══════════════════════════════════════════════ */
+
+/* ─── 1280px: small desktop ─────────────────── */
+@media (max-width: 1280px) {
+  .hero-strip,
+  .settings-panel,
+  .workspace {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  .settings-inner {
+    grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+  }
+}
+
+/* ─── 1024px: tablet ─────────────────────────── */
+@media (max-width: 1024px) {
+  .hero-strip,
+  .settings-panel,
+  .workspace {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .settings-inner {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .sg-wide {
+    grid-column: span 2;
+  }
+
+  .hero-stats {
+    gap: 8px;
+  }
+
+  .hero-stat {
+    min-width: 95px;
+    padding: 8px 14px;
+  }
+
+  .cta-row {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .cap-preview {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .stats-row {
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  }
+}
+
+/* ─── 768px: mobile ──────────────────────────── */
+@media (max-width: 768px) {
+  /* Topbar */
+  .topbar {
+    padding: 0 12px;
+    gap: 8px;
+    height: 56px;
+  }
+  :root { --topbar-h: 56px; }
+
+  .brand-name { font-size: .85rem; }
+  .brand-sub  { font-size: .58rem; }
+  .brand-icon { width: 34px; height: 34px; }
+
+  .topbar-divider { display: none; }
+  .topbar-nav     { display: none; }
+
+  /* Hide text labels on topbar buttons, keep icons */
+  .tbtn .span-text { display: none; }
+  .tbtn { padding: 8px 10px; min-width: 40px; min-height: 44px; justify-content: center; }
+  .tbtn svg { width: 16px; height: 16px; }
+
+  .autosave-indicator span { display: none; }
+  .autosave-indicator { padding: 6px 8px; }
+
+  /* Hero */
+  .hero-strip {
+    grid-template-columns: 1fr;
+    padding: 14px 16px 0;
+    gap: 10px;
+  }
+
+  .hero-text h1 { font-size: 1.2rem; }
+  .hero-text p  { font-size: .75rem; }
+
+  .hero-stats {
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+  .hero-stat {
+    min-width: 80px;
+    padding: 7px 10px;
+    flex: 1;
+  }
+  .hero-stat-val   { font-size: .88rem; }
+  .hero-stat-label { font-size: .58rem; }
+
+  /* Settings */
+  .settings-panel,
+  .workspace {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+
+  .settings-inner {
+    grid-template-columns: 1fr;
+    gap: 12px 16px;
+    padding: 14px 16px;
+  }
+
+  .sg-wide,
+  .sg-full { grid-column: span 1; }
+
+  /* Month chips — smaller and wrap better */
+  .mchip {
+    padding: 5px 10px;
+    font-size: .68rem;
+  }
+  .months-strip { gap: 5px; }
+
+  /* CAP inputs */
+  .cap-inputs-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+  .cap-inputs-row .tb-input { max-width: 100% !important; }
+  .cap-dash { display: none; }
+  .cap-preview { grid-template-columns: repeat(2, 1fr); }
+
+  /* Data table */
+  .tbl-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+  .data-table { font-size: .74rem; }
+  .data-table thead th { padding: 8px 8px; font-size: .64rem; }
+  .data-table tbody td { padding: 2px 2px; }
+  .cell-input { padding: 6px 7px; font-size: .74rem; }
+
+  /* CTA */
+  .cta-row {
+    flex-direction: column;
+    gap: 8px;
+    padding: 4px 0;
+  }
+  .btn-distribute {
+    width: 100%;
+    justify-content: center;
+    padding: 13px 20px;
+    font-size: .9rem;
+  }
+  .btn-secondary {
+    width: 100%;
+    justify-content: center;
+    font-size: .8rem;
+  }
+
+  /* Cards */
+  .card-head { padding: 11px 14px; }
+  .card-title { font-size: .8rem; }
+  .card-body[style*="padding"] { padding: 12px !important; }
+
+  /* Stats row */
+  .stats-row {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 7px;
+    margin-bottom: 12px;
+  }
+  .stat-chip { padding: 8px 10px; }
+  .stat-chip-val   { font-size: .76rem; }
+  .stat-chip-label { font-size: .56rem; }
+
+  /* Result table */
+  .result-table { font-size: .7rem; min-width: 700px; }
+  .result-table thead th { padding: 8px 8px; font-size: .63rem; }
+  .result-table tbody td { padding: 5px 7px; }
+  .result-table tfoot td { padding: 6px 7px; font-size: .65rem; }
+
+  /* Toast */
+  #toast {
+    left: 12px;
+    right: 12px;
+    bottom: 16px;
+    transform: translateY(70px);
+    width: auto;
+    max-width: calc(100vw - 24px);
+  }
+  #toast.show {
+    transform: translateY(0);
+  }
+
+  /* Modal */
+  .modal-box { width: 95vw; max-width: 95vw; }
+  .modal-head { padding: 14px 16px; }
+  .modal-body { padding: 16px; }
+  .modal-footer { padding: 12px 16px 14px; }
+
+  /* Footer */
+  .footer-inner { gap: 5px; font-size: .7rem; }
+  .footer-sig { font-size: .85rem; }
+
+  /* Workspace spacing */
+  .workspace { gap: 12px; padding-bottom: 40px; }
+  .settings-panel { margin-top: 12px; }
+}
+
+/* ─── 480px: small mobile ─────────────────────── */
+@media (max-width: 480px) {
+  /* Brand */
+  .brand-name { font-size: .78rem; }
+  .brand-text { gap: 0; }
+  .brand-icon { width: 30px; height: 30px; }
+  .topbar { gap: 6px; }
+
+  /* Hero */
+  .hero-text h1 { font-size: 1.05rem; }
+  .hero-stats {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+  .hero-stat { min-width: 0; }
+
+  /* Settings chips */
+  .mchip { padding: 4px 8px; font-size: .63rem; }
+
+  /* Topbar actions — tighten */
+  .topbar-actions { gap: 4px; }
+  .tbtn { padding: 7px 8px; }
+
+  /* Stats — single column */
+  .stats-row {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* CTA buttons */
+  .btn-distribute { font-size: .82rem; padding: 11px 16px; }
+  .btn-secondary  { font-size: .75rem; padding: 10px 14px; }
+
+  /* Toast */
+  #toast { font-size: .76rem; padding: 10px 14px; }
+
+  /* Modal */
+  .modal-head h3   { font-size: .84rem; }
+  .modal-input     { font-size: .8rem; }
+  .modal-btn       { padding: 9px 16px; font-size: .78rem; }
+
+  /* Card heads */
+  .card-head { padding: 9px 12px; }
+  .card-icon { width: 15px; height: 15px; }
+
+  /* Workspace */
+  .workspace, .settings-panel {
+    padding-left: 8px;
+    padding-right: 8px;
+  }
+  .hero-strip {
+    padding-left: 8px;
+    padding-right: 8px;
+  }
+
+  /* Result table tighter */
+  .result-table { font-size: .65rem; min-width: 600px; }
+}
+
+/* ─── Scroll hint for wide tables on mobile ─────────────────── */
+@media (max-width: 768px) {
+  .tbl-wrap {
+    position: relative;
+  }
+  .tbl-wrap::after {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 20px;
+    height: 100%;
+    background: linear-gradient(to right, rgba(255,255,255,.4), transparent);
+    pointer-events: none;
+    border-radius: 0;
+  }
+}
